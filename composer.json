@@ -17,9 +17,6 @@
 	],
 	"require": {
 		"php": ">=5.5.9",
-		"illuminate/support": "5.3.*",
-		"illuminate/validation": "5.3.*",
-		"illuminate/http": "5.3.*"
 	},
 	"require-dev": {},
 	"autoload": {
