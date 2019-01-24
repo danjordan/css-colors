@@ -12,28 +12,14 @@ class CsscolorServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot() {
-		/**
-		 * If the package method exists, we're using Laravel 4
-		 */
-		if (method_exists($this, 'package')) {
-		    $this->package('SoapBox/Csscolor');
-		}
-	}
-
-	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register() {
-		$this->app['csscolor'] = $this->app->share(function($app) {
-			return new Csscolor;
-		});
+		$this->app->singleton('csscolor', function ($app) {
+		             return new Csscolor;
+		         });
 
 		$this->app->booting(function() {
 			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
